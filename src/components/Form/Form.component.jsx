@@ -7,7 +7,7 @@ import { useSpeechContext } from "@speechly/react-client/dist/hooks";
 import useStyles from "./Form.styles"
 import { incomeCategories, expenseCategories } from "../../constants/categories";
 import formatDate from "../../utils/formatDate";
-import CustomizedSnackbar from "../Snackbar.js/Snackbar";
+import CustomizedSnackbar from "../Snackbar.js/Snackbar.component";
 
 const initialFormData ={
     amount: "",

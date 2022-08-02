@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 import { PushToTalkButton, PushToTalkButtonContainer, BigTranscript, BigTranscriptContainer } from "@speechly/react-ui";
 
-import useStyles from "./styles"
+import useStyles from "./App.styles"
 
 import Details from "./components/Details/Details.component";
 import Main from "./components/Main/Main.component";
