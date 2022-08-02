@@ -1,21 +1,24 @@
 import React from "react";
 import { Card, CardHeader, CardContent, Typography, Grid, Divider } from "@material-ui/core";
 
-import useStyles from "./styles"
+import useStyles from "./Main.styles"
 
-import Form from "./Form/Form";
-import List from "./List/List";
+import Form from "../Form/Form.component";
+import List from "../List/List.component";
+import InfoCard from "../InfoCard";
+import useBalance from "../../utils/useBalance";
 
 const Main = () => {
     const { root, cardContent } = useStyles()
+    const balance = useBalance()
   return (
     <Card className={root}>
         <CardHeader title="Budget Tracker" subheader="Built by MaestroDev &copy; 2022" />
         <CardContent>
-            <Typography align="center" variant="h5">Total Balance $100</Typography>
+            <Typography align="center" variant="h5">Total Balance {balance < 0 && "-"}&#8358;{balance > 0 ? balance :  Math.abs(balance)}</Typography>
             <Typography variant="subtitle1" style={{lineHeight: "1.5em", marginTop: "20px"}}>
                 {/* Infocard ... */}
-                Try saying: Add income for $1000 in category Salary for Monday 
+                <InfoCard /> 
             </Typography>
             <Divider />
             <Form />

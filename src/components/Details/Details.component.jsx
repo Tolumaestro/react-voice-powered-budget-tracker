@@ -4,7 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 import useTransactions from "../../utils/useTransactions";
 import {Chart, ArcElement, Tooltip, Legend} from 'chart.js'
 
-import useStyles from "./styles"
+import useStyles from "./Details.styles"
 Chart.register(ArcElement, Tooltip, Legend)
 
 
@@ -13,13 +13,12 @@ const Details = ({title}) => {
   const { income, expense } = useStyles()
   const { total, chartData } = useTransactions(title)
 
-  console.log(total, chartData);
   return (
   <Card className={title === "Income" ? income : expense}>
         <CardHeader title={title} />
         <CardContent>
-            <Typography variant="h5">${total}</Typography>
-            <Doughnut data={chartData} />
+            <Typography variant="h5">&#8358;{total}</Typography>
+            { chartData && <Doughnut data={chartData} />}
         </CardContent>
     </Card>
   )
